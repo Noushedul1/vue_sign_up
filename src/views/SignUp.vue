@@ -56,8 +56,8 @@
           </div>
           <div class="allmargin">
               <label for="">
-                  <input type="checkbox" v-model="formdata.jobtype" true-value="Day" false-value="Night">
-                  Jobtype :
+                  <input type="checkbox" v-model="formdata.jobtype" true-value="Yes" false-value="No">
+                  Remote job ?
               </label>
           </div>
           <div class="allmargin">
@@ -74,9 +74,9 @@
           <p>Gender : {{formdata.gender}}</p>
           <p>Jobtype : {{formdata.jobtype}}</p>
       </div>
-      <div>
+      <!-- <div>
           <pre>{{JSON.stringify(formdata,null,2)}}</pre>
-      </div>
+      </div> -->
   </div>
 </template>
 
