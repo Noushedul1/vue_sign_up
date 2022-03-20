@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link :to="{name:'product'}">Product</router-link> |
-    <router-link :to="{name: 'signup'}">Sign Up</router-link>
+    <router-link :to="{name: 'signup'}">Sign Up</router-link> |
+    <router-link :to="{name: 'imagegallary'}">ImageGallary</router-link>
   </nav>
   <router-view/>
 </template>
