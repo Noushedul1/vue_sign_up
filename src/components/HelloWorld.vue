@@ -1,6 +1,14 @@
 <template>
+<slot name="vue"></slot>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <slot name="js"></slot>
+    <h1>{{ msg }} and {{country}}</h1>
+    <ul>
+      <li v-for="p in player" :key="p">
+        {{p.id}} : {{p.name}}
+      </li>
+    </ul>
+    <slot name="php"></slot>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -34,7 +42,18 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: {
+      type: String,
+      required: false,
+      default: 'hello akib'
+    },
+    country: {
+      type: String,
+      required: true
+    },
+    player: {
+      type: Array
+    }
   }
 }
 </script>
