@@ -26,8 +26,8 @@ export default {
   },
   data(){
     return {
-      msg: 'Welcome to Your Vue.js App',
-      country: 'England',
+      msg: 'Welcome to my Vue.js App',
+      country: 'Bangladesh',
       player: [
         {id:1,name:'shakib'},
         {id:2,name:'tamim'},

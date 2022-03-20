@@ -72,7 +72,7 @@
           <p>Skills : {{formdata.skills}}</p>
           <p>Favarite player : {{formdata.favplayer}}</p>
           <p>Gender : {{formdata.gender}}</p>
-          <p>Jobtype : {{formdata.jobtype}}</p>
+          <p>Remote job : {{formdata.jobtype}}</p>
       </div>
       <!-- <div>
           <pre>{{JSON.stringify(formdata,null,2)}}</pre>
@@ -103,9 +103,8 @@ export default {
         isSubmit(){
             this.passError = this.formdata.pass.length >5 ? '' : 'password at least 5 character';
             if(!this.passError){
-                console.log('password',this.formdata.pass);
+                this.formvalueShow = true;
             }
-            this.formvalueShow = true;
         }
     }
 }
