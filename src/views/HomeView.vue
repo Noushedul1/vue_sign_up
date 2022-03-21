@@ -25,6 +25,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import {mapActions,mapGetters} from 'vuex';
 // import {books,players} from '../store/index';
 
 export default {
@@ -45,17 +46,24 @@ export default {
     }
   },
   methods: {
-    priceReduce(){
-      this.$store.dispatch("priceReduce");
-    }
+    ...mapActions({
+      priceReduce: 'priceReduce'
+    })
+    // priceReduce(){
+    //   this.$store.dispatch("priceReduce");
+    // }
   },
   computed: {
-    bookPrice(){
-      return this.$store.getters.bookPrice;
-    },
-    playerRun(){
-      return this.$store.getters.playerRun;
-    }
+    ...mapGetters({
+      bookPrice: 'bookPrice',
+      playerRun: 'playerRun'
+    })
+    // bookPrice(){
+    //   return this.$store.getters.bookPrice;
+    // },
+    // playerRun(){
+    //   return this.$store.getters.playerRun;
+    // }
   }
 }
 </script>
