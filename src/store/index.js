@@ -18,10 +18,38 @@ export default createStore({
     ]
   },
   getters: {
+    bookPrice: (state)=>{
+      const bookPrice = state.books.map((book)=>{
+        return {
+          price: book.price/2,
+          bookname: book.bookname,
+          writter: book.writter
+        }
+      });
+      return bookPrice;
+    },
+    playerRun: (state)=>{
+      const playerRun = state.players.map((player)=>{
+        return {
+          type: player.type,
+          playername: player.playername,
+          run: player.run/2
+        }
+      });
+      return playerRun;
+    }
   },
   mutations: {
+    PRICE_REDUCE(state){
+      state.books.forEach((book)=>{
+        book.price= book.price/2
+      });
+    }
   },
   actions: {
+    priceReduce: ({commit})=>{
+      commit("PRICE_REDUCE");
+    }
   },
   modules: {
   }

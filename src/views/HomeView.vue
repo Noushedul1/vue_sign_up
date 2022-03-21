@@ -12,12 +12,20 @@
         <p>hello php programmer</p>
       </template>
     </HelloWorld>
+    <div v-for="b in bookPrice" :key="b.id">
+      {{b.bookname}} || {{b.price}}
+    </div>
+    <div v-for="p in playerRun" :key="p.id">
+      {{p.playername}} || {{p.run}}
+    </div>
+    <button @click="priceReduce()">Book Price</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+// import {books,players} from '../store/index';
 
 export default {
   name: 'HomeView',
@@ -34,6 +42,19 @@ export default {
         {id:3,name:'yasir'},
         {id:4,name:'mehedi'}
       ]
+    }
+  },
+  methods: {
+    priceReduce(){
+      this.$store.dispatch("priceReduce");
+    }
+  },
+  computed: {
+    bookPrice(){
+      return this.$store.getters.bookPrice;
+    },
+    playerRun(){
+      return this.$store.getters.playerRun;
     }
   }
 }
