@@ -11,7 +11,7 @@
 import Counter from '../mixins/counter';
 export default {
     name: 'LionDetails',
-    mixins: [Counter],
+    mixins: [Counter], 
     data(){
         return {
             lionpicture: 'https://source.unsplash.com/random/200x200?lion',
