@@ -36,6 +36,11 @@ const routes = [
     path: '/dynamicclass',
     name: 'dynamicclass',
     component: ()=>{return import('../views/DynamicClass.vue')}
+  },
+  {
+    path: '/keepalive',
+    name: 'keepalive',
+    component: ()=>{return import('../views/KeepAlive.vue')}
   }
 ]
 

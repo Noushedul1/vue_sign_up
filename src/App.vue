@@ -5,7 +5,8 @@
     <router-link :to="{name:'product'}">Product</router-link> |
     <router-link :to="{name: 'signup'}">Sign Up</router-link> |
     <router-link :to="{name: 'imagegallary'}">ImageGallary</router-link> ||
-    <router-link :to="{name: 'dynamicclass'}">DynamicClass</router-link>
+    <router-link :to="{name: 'dynamicclass'}">DynamicClass</router-link> ||
+    <router-link :to="{name: 'keepalive'}">KeepAlive</router-link>
   </nav>
   <router-view/>
 </template>
