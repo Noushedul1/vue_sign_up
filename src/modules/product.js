@@ -1,3 +1,4 @@
+import axios from "axios";
 const state = {
     books: [
         {id: 1,bookname: 'web design',writter: 'noushedul',price: 300},
@@ -12,9 +13,11 @@ const state = {
         {id:1,type: 'allrounder',playername: 'Afif',run: 367},
         {id:1,type: 'batsman',playername: 'Tamin',run: 834},
         {id:1,type: 'keeper',playername: 'Mushfiq',run: 557},
-      ]
+      ],
+      todos: []
 };
 const getters = {
+    todos: (state)=> state.todos,
     bookPrice: (state)=>{
         const bookPrice = state.books.map((book)=>{
           return {
@@ -41,11 +44,16 @@ const mutations = {
         state.books.forEach((book)=>{
           book.price= book.price/2
         });
-      }
+    },
+    SET_TODOS:(state,todos)=>(state.todos = todos)
 };
 const actions = {
     priceReduce: ({commit})=>{
         commit("PRICE_REDUCE");
+    },
+   fetchTodos: ({commit})=>{
+        const response = axios.get('https://jsonplaceholder.typicode.com/posts');
+        commit('SET_TODOS',response.data);
     }
 };
 

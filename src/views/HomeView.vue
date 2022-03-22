@@ -19,6 +19,9 @@
       {{p.playername}} || {{p.run}}
     </div>
     <button @click="priceReduce()">Book Price</button>
+    <div v-for="t in fetchTodos" :key="t.id">
+      {{t.title}}
+    </div>
   </div>
 </template>
 
@@ -47,7 +50,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      priceReduce: 'priceReduce'
+      priceReduce: 'priceReduce',
+      fetchTodos: 'fetchTodos'
     })
     // priceReduce(){
     //   this.$store.dispatch("priceReduce");

@@ -31,6 +31,11 @@ const routes = [
     path: '/imagegallary',
     name: 'imagegallary',
     component: ()=>{return import('../views/ImageGallary.vue')}
+  },
+  {
+    path: '/dynamicclass',
+    name: 'dynamicclass',
+    component: ()=>{return import('../views/DynamicClass.vue')}
   }
 ]
 
